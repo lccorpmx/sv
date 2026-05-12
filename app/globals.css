@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -13,6 +9,12 @@ body {
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
   :root {
     --background: 204 60% 78%;
     --foreground: 210 20% 15%;
@@ -90,5 +92,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 }

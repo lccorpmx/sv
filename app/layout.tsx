@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Fredoka, Bangers } from 'next/font/google'
 
+import { Toaster } from "@/components/ui/sonner"
 import './globals.css'
 
 const fredoka = Fredoka({ subsets: ['latin'], variable: '--font-fredoka' })
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${fredoka.variable} ${bangers.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${fredoka.variable} ${bangers.variable} font-sans antialiased`}>
+        {children}
+        <Toaster position="bottom-right" richColors />
+      </body>
     </html>
   )
 }

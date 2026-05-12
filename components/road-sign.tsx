@@ -1,5 +1,4 @@
 import type { ReactNode } from "react"
-import { ArrowBigUp, CornerUpRight } from "lucide-react"
 
 interface RoadSignProps {
   children: ReactNode
@@ -10,25 +9,26 @@ interface RoadSignProps {
 
 export function RoadSign({ children, href = "#", icon, iconwall }: RoadSignProps) {
   return (
-    <div>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div
-          className="group relative flex items-center justify-center gap-3 
-                bg-[#2d8a4e] hover:bg-[#236b3c]
-                text-white font-[var(--font-bangers)] text-2xl md:text-3xl
-                tracking-wider px-8 py-3 rounded-lg
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block"
+    >
+      <div
+        className="group flex items-center justify-center gap-3
+                bg-[#2d8a4e] hover:bg-[#236b3c] active:bg-[#1a5230]
+                text-white font-[var(--font-bangers)]
+                tracking-wider px-8 py-4 rounded-lg
                 outline outline-2 outline-white outline-offset-[-6px]
-                shadow-lg transition-all hover:scale-105
-                w-full max-w-xs">
-          <span className="drop-shadow-md text-lg">{children}</span>
-          {iconwall && <div>{iconwall}</div>}
-          {icon && <span className="text-2xl">{icon}</span>}
-        </div>
-      </a>
-    </div>
+                shadow-lg hover:shadow-xl
+                transition-all duration-200 ease-out hover:scale-105 active:scale-95
+                w-full max-w-xs min-h-[56px]"
+      >
+        <span className="drop-shadow-md text-xl md:text-2xl">{children}</span>
+        {iconwall && <span className="opacity-75">{iconwall}</span>}
+        {icon && <span>{icon}</span>}
+      </div>
+    </a>
   )
 }
