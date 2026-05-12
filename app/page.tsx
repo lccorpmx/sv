@@ -122,7 +122,6 @@ export default function Page() {
               side="left"
             />
           </div>
-
           {/* Road strip */}
           <div className="w-16 h-32 bg-[#3a3a3a] relative overflow-hidden flex-shrink-0">
             <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 flex flex-col items-center justify-around py-2">
