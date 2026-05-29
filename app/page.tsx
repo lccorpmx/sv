@@ -18,6 +18,20 @@ function FacebookIcon({ className }: { className?: string }) {
     </svg>
   )
 }
+
+function GalleryIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      {/* Marco de foto */}
+      <rect x="2" y="3" width="20" height="16" rx="2" />
+      {/* Sol / círculo */}
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      {/* Montaña / paisaje */}
+      <polyline points="21 15 16 10 11 15" />
+      <polyline points="13 15 9 11 5 15" />
+    </svg>
+  )
+}
 import { RoadSign } from "@/components/road-sign"
 import { SocialSign } from "@/components/social-sign"
 import { EmailForm } from "@/components/email-form"
@@ -46,10 +60,10 @@ export default function Page() {
       <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 py-8 relative">
         {/* VW Van Front View — outer div fades in, inner div floats */}
         <div
-          className="animate-fade-in-up"
+          className="animate-fade-in-up relative z-10"
           style={{ animationDelay: '0ms' }}
         >
-          <div className="relative w-64 h-48 md:w-72 md:h-64 z-10 animate-float">
+          <div className="relative w-44 h-32 sm:w-56 sm:h-44 md:w-72 md:h-64 z-10 animate-float">
             <Image
               src="/combie.png"
               alt="Volkswagen Kombi - Sigueme el Viaje"
@@ -131,15 +145,15 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Facebook Sign - Right */}
+          {/* Gallery Sign - Right */}
           <div
             className="pt-4 animate-fade-in-up"
             style={{ animationDelay: '620ms' }}
           >
             <SocialSign
-              href="https://www.instagram.com/paquito_bachitas?igsh=cHcxMHM0bzE4Y2xn&utm_source=qr"
-              icon={<InstagramIcon className="w-6 h-6" />}
-              label="Instagram"
+              href="/galery"
+              icon={<GalleryIcon className="w-6 h-6" />}
+              label="Galería"
               side="right"
             />
           </div>
@@ -147,7 +161,7 @@ export default function Page() {
 
         {/* VW Van Side View */}
         <div
-          className="relative w-72 h-44 md:w-80 md:h-48 -mt-2 z-10 animate-fade-in-up"
+          className="relative w-56 h-36 sm:w-64 sm:h-40 md:w-80 md:h-48 -mt-2 z-10 animate-fade-in-up"
           style={{ animationDelay: '700ms' }}
         >
           <Image
@@ -173,6 +187,8 @@ export default function Page() {
         >
           {"Powered by F()under"}
         </p>
+
+
       </div>
     </main>
   )
