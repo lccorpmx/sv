@@ -5,12 +5,12 @@ import "server-only";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmailVerification = async (email: string) => {
-    try {
-        const { data, error } = await resend.emails.send({
-            from: "NextAuth <onboarding@resend.dev>",
-            to: [email],
-            subject: "Descuento en Sigueme el viaje",
-            html: `
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "NextAuth <hi@sev420.com>",
+      to: [email],
+      subject: "Descuento en Sigueme el viaje",
+      html: `
               <div style="margin:0; padding:0; background-color:#f4f6f8; font-family: Arial, sans-serif;">
 
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -110,16 +110,16 @@ export const sendEmailVerification = async (email: string) => {
 
   </div>
       `,
-        });
+    });
 
-        if (error) {
-            console.error("Resend error:", error);
-            return { success: false, error };
-        }
-
-        return { success: true, id: data?.id };
-    } catch (error) {
-        console.error("Send verification error:", error);
-        return { success: false, error };
+    if (error) {
+      console.error("Resend error:", error);
+      return { success: false, error };
     }
+
+    return { success: true, id: data?.id };
+  } catch (error) {
+    console.error("Send verification error:", error);
+    return { success: false, error };
+  }
 };
