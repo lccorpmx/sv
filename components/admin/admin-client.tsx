@@ -35,7 +35,7 @@ import { toast } from "sonner";
 
 /* ─── Types ─────────────────────────────────────────────────── */
 type DialogMode = "create" | "edit";
-type FormErrors = Partial<Record<"name" | "price" | "description" | "author", string>>;
+type FormErrors = Partial<Record<"name" | "price" | "description", string>>;
 
 const EMPTY_FORM = {
   name: "",
@@ -73,7 +73,6 @@ export function AdminClient({ initialProducts }: { initialProducts: ProductRow[]
     if (!form.price.trim() || isNaN(price) || price <= 0)
       errs.price = "Ingresa un precio válido mayor a 0.";
     if (!form.description.trim()) errs.description = "La descripción es requerida.";
-    if (!form.author.trim()) errs.author = "El autor es requerido.";
     setErrors(errs);
     return Object.keys(errs).length === 0;
   }
@@ -325,18 +324,13 @@ export function AdminClient({ initialProducts }: { initialProducts: ProductRow[]
                 {errors.price && <p className="text-xs text-red-500">{errors.price}</p>}
               </div>
               <div className="space-y-1">
-                <Label htmlFor="author">Autor *</Label>
+                <Label htmlFor="author">Autor</Label>
                 <Input
                   id="author"
                   value={form.author}
-                  onChange={(e) => {
-                    setForm((f) => ({ ...f, author: e.target.value }));
-                    if (errors.author) setErrors((er) => ({ ...er, author: undefined }));
-                  }}
+                  onChange={(e) => setForm((f) => ({ ...f, author: e.target.value }))}
                   placeholder="Marie Dupont"
-                  className={errors.author ? "border-red-400 focus-visible:ring-red-400" : ""}
                 />
-                {errors.author && <p className="text-xs text-red-500">{errors.author}</p>}
               </div>
             </div>
 

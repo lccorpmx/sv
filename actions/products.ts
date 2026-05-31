@@ -123,7 +123,6 @@ export async function createProductWithImages(
 
   if (!name) return { ok: false, error: "El nombre es requerido." };
   if (!description) return { ok: false, error: "La descripción es requerida." };
-  if (!author) return { ok: false, error: "El autor es requerido." };
   if (isNaN(price) || price <= 0) return { ok: false, error: "El precio debe ser mayor a 0." };
 
   const product = await prisma.product.create({
@@ -218,7 +217,6 @@ export async function updateProductWithImages(
 
   if (!name) return { ok: false, error: "El nombre es requerido." };
   if (!description) return { ok: false, error: "La descripción es requerida." };
-  if (!author) return { ok: false, error: "El autor es requerido." };
   if (isNaN(price) || price <= 0) return { ok: false, error: "El precio debe ser mayor a 0." };
 
   await prisma.product.update({

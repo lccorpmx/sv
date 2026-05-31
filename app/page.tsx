@@ -92,7 +92,7 @@ export default function Page() {
           className="z-10 -mt-1 animate-fade-in-up"
           style={{ animationDelay: '220ms' }}
         >
-          <RoadSign href="#" icon={<MapPin className="w-6 h-6 text-red-400" />} iconwall={<ArrowBigUp className="w-5 h-5" />}>
+          <RoadSign href="https://maps.app.goo.gl/1ijkJzDbaH4HCD137?g_st=ic" icon={<MapPin className="w-6 h-6 text-red-400" />} iconwall={<ArrowBigUp className="w-5 h-5" />}>
             {"UBICACIÓN"}
           </RoadSign>
         </div>
@@ -114,7 +114,7 @@ export default function Page() {
           className="z-10 -mt-1 animate-fade-in-up"
           style={{ animationDelay: '400ms' }}
         >
-          <RoadSign href="#" icon={<ShoppingCart className="w-6 h-6 text-red-400" />} iconwall={<CornerUpRight className="w-5 h-5" />}>
+          <RoadSign href="https://siguemeelviaje.mx/" icon={<ShoppingCart className="w-6 h-6 text-red-400" />} iconwall={<CornerUpRight className="w-5 h-5" />}>
             {"COMPRA AQUÍ"}
           </RoadSign>
         </div>

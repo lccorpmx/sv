@@ -142,21 +142,6 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
           <p className="text-[14px] leading-[1.6]" style={{ color: C.secondary }}>
             {product.description}
           </p>
-          <a
-            href={`https://instagram.com/${product.instagram}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-2 w-fit"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#E1306C" }}>
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-            </svg>
-            <span className="text-[13px] font-medium" style={{ color: "#E1306C" }}>
-              @{product.instagram}
-            </span>
-          </a>
           {product.buyUrl && (
             <a
               href={product.buyUrl}
