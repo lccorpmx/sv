@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export const sendEmailVerification = async (email: string) => {
   try {
     const { data, error } = await resend.emails.send({
-      from: "NextAuth <hi@sev420.com>",
+      from: "SV <hi@sev420.com>",
       to: [email],
       subject: "Descuento en Sigueme el viaje",
       html: `
