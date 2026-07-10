@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { MapPin, ShoppingCart } from "lucide-react"
+import { ShoppingCart } from "lucide-react"
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -35,7 +35,7 @@ function GalleryIcon({ className }: { className?: string }) {
 import { RoadSign } from "@/components/road-sign"
 import { SocialSign } from "@/components/social-sign"
 import { EmailForm } from "@/components/email-form"
-import { ArrowBigUp, CornerUpRight } from "lucide-react"
+import { CornerUpRight } from "lucide-react"
 
 export default function Page() {
   return (
@@ -87,13 +87,13 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Ubicacion Button */}
+        {/* Feliz 710 Sign */}
         <div
           className="z-10 -mt-1 animate-fade-in-up"
           style={{ animationDelay: '220ms' }}
         >
-          <RoadSign href="https://maps.app.goo.gl/1ijkJzDbaH4HCD137?g_st=ic" icon={<MapPin className="w-6 h-6 text-red-400" />} iconwall={<ArrowBigUp className="w-5 h-5" />}>
-            {"UBICACIÓN"}
+          <RoadSign honey>
+            {"FELIZ 710"}
           </RoadSign>
         </div>
 
