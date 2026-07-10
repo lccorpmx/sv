@@ -23,9 +23,11 @@ export function EmailForm() {
         setSubmitted(true)
         setEmail("")
         toast.success("¡Correo enviado con éxito!", {
-          description: "Revisa tu bandeja de entrada para tu descuento.",
+          description: "Revisa tu bandeja de entrada y tu carpeta de spam para tu descuento.",
         })
-        setTimeout(() => setSubmitted(false), 3000)
+        setTimeout(() => {
+          window.location.href = "https://siguemeelviaje.mx"
+        }, 4000)
       } else {
         toast.error(response?.error || "Error al enviar el correo", {
           description: "Por favor intenta de nuevo más tarde.",
@@ -52,12 +54,12 @@ export function EmailForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          disabled={loading}
+          disabled={loading || submitted}
           className="w-full px-6 py-3.5 rounded-full bg-[#f5c542] text-[#3a3a3a] placeholder-[#7a6a2a] font-[var(--font-bangers)] text-lg tracking-wide border-2 border-[#d4a832] focus:outline-none focus:ring-2 focus:ring-[#2d8a4e] focus:border-[#2d8a4e] transition-all duration-200 pr-14 disabled:opacity-70"
         />
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading || submitted}
           aria-label="Enviar correo"
           className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#d4a832] hover:bg-[#c49a28] flex items-center justify-center transition-all duration-200 ease-out hover:scale-110 active:scale-90 text-[#3a3a3a] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
         >
@@ -69,7 +71,7 @@ export function EmailForm() {
       </form>
       {submitted && (
         <p className="text-[#2d8a4e] font-[var(--font-bangers)] text-base tracking-wide mt-3 animate-fade-in-up">
-          {"¡Gracias por suscribirte!"}
+          {"¡Gracias! Revisa tu bandeja de entrada y tu carpeta de spam 📬 Te llevamos a la tienda..."}
         </p>
       )}
     </div>
