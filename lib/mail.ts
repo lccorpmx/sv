@@ -76,6 +76,9 @@ export const sendEmailVerification = async (email: string) => {
                           <p style="margin:10px 0 0; font-family:'Fredoka', Arial, sans-serif; font-size:16px; font-weight:500; color:rgba(255,255,255,0.9);">
                             Tu cupón exclusivo te espera
                           </p>
+                          <p style="margin:8px 0 0; font-family:'Fredoka', Arial, sans-serif; font-size:18px; font-weight:700; letter-spacing:1px; color:#ffffff;">
+                            Cupón: happy710
+                          </p>
                         </td>
                       </tr>
                     </table>
