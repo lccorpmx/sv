@@ -87,13 +87,13 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Feliz 710 Sign */}
+        {/* Bienvenido Sign */}
         <div
           className="z-10 -mt-1 animate-fade-in-up"
           style={{ animationDelay: '220ms' }}
         >
-          <RoadSign honey>
-            {"FELIZ 710"}
+          <RoadSign>
+            {"BIENVENIDO"}
           </RoadSign>
         </div>
 

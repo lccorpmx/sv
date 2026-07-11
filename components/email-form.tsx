@@ -44,8 +44,7 @@ export function EmailForm() {
   return (
     <div className="w-full max-w-sm mx-auto text-center px-4">
       <p className="text-[#3a3a3a] font-[var(--font-bangers)] text-xl md:text-2xl tracking-wide mb-3 mt-6">
-        {"Obtén un 25% de Descuento "}
-        <span className="honey-text">solo hoy</span>
+        {"Obtén un 20% de Descuento de bienvenida"}
       </p>
       <form onSubmit={handleSubmit} className="relative">
         <input

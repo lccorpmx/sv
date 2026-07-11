@@ -1,14 +1,13 @@
-import type { CSSProperties, ReactNode } from "react"
+import type { ReactNode } from "react"
 
 interface RoadSignProps {
   children: ReactNode
   href?: string
   icon?: ReactNode
   iconwall?: ReactNode
-  honey?: boolean
 }
 
-export function RoadSign({ children, href, icon, iconwall, honey }: RoadSignProps) {
+export function RoadSign({ children, href, icon, iconwall }: RoadSignProps) {
   const sign = (
     <div
       className={`group relative flex items-center justify-center gap-3
@@ -21,13 +20,6 @@ export function RoadSign({ children, href, icon, iconwall, honey }: RoadSignProp
       <span className="drop-shadow-md text-xl md:text-2xl">{children}</span>
       {iconwall && <span className="opacity-75">{iconwall}</span>}
       {icon && <span>{icon}</span>}
-      {honey && (
-        <span aria-hidden="true" className="honey-drips">
-          <span className="honey-drip" style={{ left: "16%", "--d": "6.4s", "--delay": "0s" } as CSSProperties} />
-          <span className="honey-drip" style={{ left: "48%", width: "9px", "--d": "5.3s", "--delay": "1.8s" } as CSSProperties} />
-          <span className="honey-drip" style={{ left: "78%", "--d": "7.1s", "--delay": "3.4s" } as CSSProperties} />
-        </span>
-      )}
     </div>
   )
 
